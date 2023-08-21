@@ -16,13 +16,15 @@ manyArgs(1, 2, 5, 6, 7) // 420
 manyArgs(1, 2, 5, 6) // 60
 
 
-
-
 ***********************************************************************/
 
-const manyArgs = (...args) => {
-    // Your code here
+const manyArgs = (...args) => { return [...args].reduce(((product, num) => product * num), 1)
 }
+
+// Example
+console.log(manyArgs(1, 2, 3, 4, 5, 6, 7)) // 5040
+console.log(manyArgs(1, 2, 5, 6, 7)) // 420
+console.log(manyArgs(1, 2, 5, 6)) // 60
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{

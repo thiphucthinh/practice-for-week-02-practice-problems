@@ -18,8 +18,25 @@ str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spider
 ***********************************************************************/
 
 const spiderManWriters = (str) => {
-    // Your code here
+    let writer = {};
+    let stringArr = str.split(", ");
+
+    for (let person of stringArr) {
+        if (person.includes("no Spiderman")) {
+            let subArr = person.split(": ");
+            writer[subArr[0]] = subArr[1];
+        }
+    }
+    return writer;
 }
+
+
+// Example
+str1 = 'Angela T: wrote about Spiderman, Miah B: no Spiderman, Adrian R: wrote about Spiderman';
+console.log(spiderManWriters(str1));
+
+str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spiderman';
+console.log(spiderManWriters(str2));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{

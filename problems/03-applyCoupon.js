@@ -26,10 +26,32 @@ console.log(applyCoupon(10, wishList)); // => 88.2;
 console.log(applyCoupon(20, wishList)); // => 78.4;
 
 *******************************************************************************/
-
+// Option 1
 const applyCoupon = (discount, wishList) => {
-    // Your code here
+    let sum = 0;
+    for (let item of wishList) {
+        sum += item.price - (item.price * discount / 100);
+    }
+    return sum;
 }
+
+// Option 2: Using Reduce Method
+// const applyCoupon = (discount, wishList) => {
+//     return wishList.reduce((acc, item) => {
+//     return acc + (item.price - (item.price * discount / 100));
+// }, 0)};
+
+// Example
+
+wishList = [
+            {name: "Xbox", price: 80},
+            {name: "Bacon", price: 5},
+            {name: "Gummy Candies", price: 3},
+            {name: "SURGE soda 24 pack", price: 10}
+            ];
+
+console.log(applyCoupon(10, wishList)); // => 88.2;
+console.log(applyCoupon(20, wishList)); // => 78.4;
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/
 try{

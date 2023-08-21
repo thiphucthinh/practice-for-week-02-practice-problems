@@ -28,8 +28,20 @@ newDice3(2); // 24
 ***********************************************************************/
 
 const dynamicDice = sides => {
-  // Your code here
+  return function(rolls) {
+    return sides * rolls;
+  }
 }
+
+// Example
+const newDice = dynamicDice(20); // returns a function
+console.log(newDice(5)); // 100
+
+const newDice2 = dynamicDice(10); // returns a function
+console.log(newDice2(5)); // 50
+
+const newDice3 = dynamicDice(12); // returns a function
+console.log(newDice3(2)); // 24
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
